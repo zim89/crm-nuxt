@@ -1,4 +1,11 @@
 export default defineNuxtConfig({
+  runtimeConfig: {
+    // apiUrl: process.env.NUXT_API_URL, // Доступно только на сервере
+    public: {
+      appwriteProjectId: process.env.NUXT_APPWRITE_PROJECT_ID || "",
+      appwriteEndpoint: process.env.NUXT_APPWRITE_ENDPOINT || "",
+    },
+  },
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
   modules: [
@@ -18,9 +25,13 @@ export default defineNuxtConfig({
         },
       },
     ],
+    "@pinia/nuxt",
   ],
   shadcn: {
     prefix: "Ui",
     componentDir: "./components/ui",
+  },
+  pinia: {
+    storesDirs: ["./stores/**"],
   },
 });
