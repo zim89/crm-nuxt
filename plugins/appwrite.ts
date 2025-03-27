@@ -16,6 +16,8 @@ export default defineNuxtPlugin((nuxtApp) => {
   const account = new Account(client);
   const storage = new Storage(client);
   const DB = new Databases(client);
+  const DB_ID = config.public.dbId;
+  const DB_STORAGE = config.public.dbStorage;
 
-  nuxtApp.provide("appwrite", { account, storage, DB });
+  nuxtApp.provide("appwrite", { account, storage, DB, DB_ID, DB_STORAGE });
 });

@@ -4,6 +4,8 @@ export default defineNuxtConfig({
     public: {
       appwriteProjectId: process.env.NUXT_APPWRITE_PROJECT_ID || "",
       appwriteEndpoint: process.env.NUXT_APPWRITE_ENDPOINT || "",
+      dbId: process.env.NUXT_DB_ID || "",
+      dbStorage: process.env.NUXT_DB_STORAGE || "",
     },
   },
   compatibilityDate: "2024-11-01",

@@ -1,8 +1,8 @@
-import type { AppwriteInstance } from "./appwrite";
+import type { IAppwriteInstance } from "./appwrite";
 
 declare module "#app" {
   interface NuxtApp {
-    $appwrite: AppwriteInstance;
+    $appwrite: IAppwriteInstance;
   }
 }
 
