@@ -3,7 +3,7 @@ import { useDealSlideStore } from "~/stores/deal-slide.store";
 
 const store = useDealSlideStore();
 
-const isLocalOpen = computed({
+const isOpen = computed({
   get: () => store.isOpen,
   set: (value) => {
     store.isOpen = value;
@@ -12,22 +12,18 @@ const isLocalOpen = computed({
 </script>
 
 <template>
-  <div>
-    <USlideover v-model="isLocalOpen">
-      <UCard
-        class="flex flex-col flex-1 overflow-y-auto"
-        :ui="{
-          body: { base: 'flex-1' },
-          ring: '',
-          divide: 'divide-y divide-border',
-        }"
-      >
-        <template #header>
-          <KanbanSlideoverTop />
-        </template>
+  <UiSheet v-model:open="isOpen">
+    <UiSheetContent side="right" class="flex flex-col flex-1 overflow-y-auto">
+      <UiSheetHeader class="hidden">
+        <UiSheetTitle>{{ store.card?.name }}</UiSheetTitle>
+        <UiSheetDescription> Observe deal details. </UiSheetDescription>
+      </UiSheetHeader>
 
+      <KanbanSlideoverContent />
+
+      <UiSheetFooter class="flex flex-col gap-4">
         <KanbanSlideoverComments />
-      </UCard>
-    </USlideover>
-  </div>
+      </UiSheetFooter>
+    </UiSheetContent>
+  </UiSheet>
 </template>
