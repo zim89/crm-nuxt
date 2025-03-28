@@ -88,9 +88,9 @@ const onSubmit = handleSubmit((values) => {
 
 <template>
   <div>
-    <h1 class="font-bold text-2xl mb-10">
-      Edit {{ (data as unknown as ICustomerFormState)?.name }}
-    </h1>
+    <PageHeader
+      :title="`Edit ${((data as unknown as ICustomerFormState)?.name || '')}`"
+    />
 
     <div v-if="isQueryPending">Loading...</div>
     <form v-else-if="data" class="form" @submit="onSubmit">

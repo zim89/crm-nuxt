@@ -55,7 +55,7 @@ const register = async () => {
 <template>
   <div class="flex items-center justify-center min-h-screen">
     <div class="rounded bg-sidebar w-72 p-5">
-      <h1 class="text-2xl font-bold text-center mb-5">Login</h1>
+      <PageHeader title="Auth" />
 
       <form>
         <UiInput

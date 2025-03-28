@@ -59,7 +59,7 @@ function handleDrop(targetColumn: IColumn) {
 
 <template>
   <div>
-    <h1 class="font-bold text-2xl mb-10">Main Page</h1>
+    <PageHeader title="Dashboard" />
     <div v-if="isLoading">Loading...</div>
 
     <div v-else>
