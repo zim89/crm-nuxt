@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
+  pages: true,
   runtimeConfig: {
-    // apiUrl: process.env.NUXT_API_URL, // Доступно только на сервере
     public: {
       appwriteProjectId: process.env.NUXT_APPWRITE_PROJECT_ID || "",
       appwriteEndpoint: process.env.NUXT_APPWRITE_ENDPOINT || "",

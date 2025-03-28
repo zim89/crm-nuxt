@@ -18,7 +18,7 @@ const { data: customers, isLoading } = useQuery({
 </script>
 
 <template>
-  <div class="p-10">
+  <div>
     <h1 class="font-bold text-2xl mb-10">Наши клиенты</h1>
     <div v-if="isLoading">Loading...</div>
     <UiTable v-else>

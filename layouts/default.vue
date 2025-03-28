@@ -34,8 +34,8 @@ onMounted(async () => {
     ]"
   >
     <WidgetSidebar v-if="store.isAuth" />
-    <div>
-      <slot />
+    <div class="p-14">
+      <slot></slot>
     </div>
   </section>
 </template>
